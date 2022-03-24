@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>LOve Calculator</title>
+	<link rel="stylesheet" href="">
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Pattaya&family=Russo+One&display=swap" rel="stylesheet">
+		
+</head>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+
+	}
+	body{
+		background-image: linear-gradient(rgba(0, 0, 0, 0.1),rgb(22, 122, 115)),url('/love4.jpg');
+		height: 100vh;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-blend-mode: darken;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		font-family: 'Ubuntu',sans-serif;
+		position: relative;
+
+	}
+	.container{
+		background-color: #672f2f94;
+		border-radius: 7px;
+		overflow: hidden;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+		width: 600px;
+		max-width: 100%;
+		position: relative;
+
+	}
+	.header{
+		text-align: center;
+		padding: 20px;
+		background-color: #c7bfbf;
+		position: relative;
+
+	}
+	.header img{
+		position: absolute;
+		height: 70px;
+		width: 108px;
+		left: 38px;
+		top: 0;
+	}
+	.header h2{
+		margin: 0;
+		font-size: 30px;
+		color: white;
+		font-family: 'Fira Sans',sans-serif;
+		text-shadow: 4px 2px 0 black;
+	}
+	.input{
+		text-align: center;
+	}
+	.calculate{
+		text-align: center;
+		margin-top: 12px;
+	}
+	.main-body{
+		padding: 30px 40px;
+	}
+	input{
+		border: 2px solid #f0f0f0;
+		border-radius: 4px;
+		font-family: inherit;
+		padding: 12px;
+		font-size: 16px;
+	}
+	#span1{
+		font-size: 30px;
+		color: white;
+		margin-top: 12px;
+		margin-left: 8px;
+		margin-right: 8px;
+	}
+	#error{
+		visibility: hidden;
+	}
+	.calculate{
+		margin-top: 7px;
+
+	}
+	.calculate_btn{
+		margin-top: 7px;
+		width: 50%;
+	}
+	button{
+		width: 100%;
+		font-family: inherit;
+		font-size: 18px;
+		padding: 10px;
+		border-radius: 7px;
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+		cursor: pointer;
+		color: white;
+		background-color: #655c59;
+		margin-left: 127px;
+		outline: none;
+	}
+	button:hover{
+		background-color: black;
+		color: white;
+	}
+	.answer{
+		position: relative;
+
+	}
+	.answer img{
+		width: 150px;
+		height: 130px;
+		margin-top: 24px;
+
+	}
+	.answer h2{
+		visibility: hidden;
+	}
+	.heading{
+		position: absolute;
+		top: 62px;
+		left: 229px;
+		color: white;
+		font-size: 30px;
+		font-family: inherit;
+	}
+	.message{
+		width: 98%;
+		text-align: center;
+		font-size: 20px;
+		color:#fbcdd2;
+	}
+	#image1{
+		position: absolute;
+		height: 253px;
+		width: 150px;
+		left: 0px;
+		top: 174px;
+
+	}
+	#image2{
+		position: absolute;
+		height: 253px;
+		width: 150px;
+		right:  0px;
+		top: 174px;
+	}
+	.animation{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		position: absolute;
+		bottom: -150px;
+	}
+	.animation img{
+		width: 100px;
+		z-index: -1;
+		animation: animate 5s linear infinite;
+	}
+	@keyframes animate{
+
+		0%{
+			transform: translateY(0);
+			opacity: 0;
+		}
+		50%{
+			transform: rotate(270deg);
+			opacity: 1;
+		}
+		70%{
+		
+			opacity: 1;
+		}
+		100%{
+			transform: translateY(-80vh);
+			opacity: 0;
+		}
+	}
+	.animation img:nth-child(1){
+		animation-delay: 2s;
+		width: 100px;
+	}
+	.animation img:nth-child(2){
+		animation-delay: 3s;
+		width: 50px;
+	}
+	.animation img:nth-child(3){
+		animation-delay: 3.5s;
+		width: 70px;
+	}
+	.animation img:nth-child(4){
+		animation-delay: 4s;
+		width: 90px;
+	}
+	.animation img:nth-child(5){
+		animation-delay: 2s;
+		width: 100px;
+	}
+	.animation img:nth-child(6){
+		animation-delay: 5s;
+		width: 40px;
+	}
+	.animation img:nth-child(7){
+		animation-delay: 6s;
+		width: 60px;
+	}
+	.animation img:nth-child(8){
+		animation-delay: 2.5s;
+		width: 80px;
+	}
+	.animation img:nth-child(9){
+		animation-delay: 4s;
+		width: 100px;
+	}
+
+
+</style>
+<body>
+	<div class="container">
+		<div class="header">
+			<h2>TÌNH YÊU - GIẢN ĐƠN</h2>
+			<img src="/love2.png" alt="">
+		</div>
+		<div class="main-body">
+			<div class="input">
+				<input type="text" id="firstname" autocomplete="off" placeholder="Tên Của Bạn">
+				<span id="span1">+</span>
+				<input type="text" id="lastname" autocomplete="off" placeholder="Tên Người Ấy">
+			</div>
+			<div class="calculate">
+				<small id="error">error message</small>
+				<div class="calculate_btn">
+					<button class="btn" onclick="lovecal()">Tính toán tình yêu (%)</button>
+					<img src="/rose.png" id="image1" alt="">
+					<img src="/rose.png" id="image2" alt="">
+
+				</div>
+				<div class="answer">
+					<img src="/heart.png" alt="">
+					<h2 class="heading">45</h2>
+				</div>
+				<div class="message">
+					<p>Mối quan hệ của bạn là tốt</p>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<div class="animation">
+			<img src="/heart.png" alt="">
+			<img src="/love.png" alt="">
+			<img src="/love3.png" alt="">
+
+			<img src="/heart.png" alt="">
+			<img src="/rose.png" alt="">
+			<img src="/love3.png" alt="">
+
+			<img src="/heart.png" alt="">
+			<img src="/love.png" alt="">
+			<img src="/love3.png" alt="">
+		</div>
+		<script>
+		function lovecal(){
+
+
+		const firstname=document.getElementById('firstname');
+		const lastname=document.getElementById('lastname');
+		const error=document.getElementById('error');
+		const answer=document.getElementsByClassName('heading');
+		const message=document.getElementsByClassName('message');
+
+         if(firstname.value==""||lastname.value==""){
+			error.style.visibility="visible";
+			error.innerText="invalid name";
+			error.style.color="orange";
+		}
+		else if(firstname.value.length<3||lastname.value.length<3){
+
+			error.style.visibility="visible";
+			error.innerText="Name must be minimum 3 character";
+			error.style.color="orange";
+		}
+		else
+		{
+			
+			var love=Math.ceil(Math.random()*100);
+			answer[0].innerText=love+"%";
+			answer[0].style.visibility='visible';
+			message[0].innerText=`Mr.${firstname.value} and Mrs.${lastname.value} chúc mừng cho một cặp đôi đẹp. `
+		}
+
+
+	}
+
+
+		</script>
+	
+</body>
+</html>
